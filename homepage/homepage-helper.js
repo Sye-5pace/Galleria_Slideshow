@@ -35,38 +35,34 @@ document.addEventListener('DOMContentLoaded', function (){
 
         return imgContainer;
     })
-
-    //append the imgContainer to the already created div container
-    //from the main page and attaches event listeners to all its children
+    
     
     //Function to redirect homepage to corresponding content
     //on slideshow page
-    const homepageArtRedirect = ()=>{
-        const index = this.dataset.index;
+    const homepageArtRedirect = (event)=>{
+        const index = event.currentTarget.dataset.index;
         const galleriaIndex = galleriaData[index];
         const url = "slideshowpage.html?" + 
             "index=" + galleriaIndex +
-            "&redirectImage" + encodeURIComponent(galleriaIndex.images['hero'].small) +
+            "&redirectImage=" + encodeURIComponent(galleriaIndex.images['hero'].small) +
             // "&redirectModalcontent" + encodeURIComponent(galleriaIndex.artist['name']) +
-            "&redirectImageTitle" + encodeURIComponent(galleriaIndex.name) +
-            "&redirectArtistName" + encodeURIComponent(galleriaIndex.artist['image']) +
-            "&redirectArtistImage" + encodeURIComponent(galleriaIndex.artist['name']) +
-            "&redirectArtYear" + encodeURIComponent(galleriaIndex.year) +
-            "&redirectArtDesc" + encodeURIComponent(galleriaIndex.description) +
-            "&redirectImageLink" + encodeURIComponent(galleriaIndex.source); 
+            "&redirectImageTitle=" + encodeURIComponent(galleriaIndex.name) +
+            "&redirectArtistName=" + encodeURIComponent(galleriaIndex.artist['image']) +
+            "&redirectArtistImage=" + encodeURIComponent(galleriaIndex.artist['name']) +
+            "&redirectArtYear=" + encodeURIComponent(galleriaIndex.year) +
+            "&redirectArtDesc=" + encodeURIComponent(galleriaIndex.description) +
+            "&redirectImageLink=" + encodeURIComponent(galleriaIndex.source); 
         window.location.href = url;
     }
 
+    
+    //append the imgContainer to the already created div container
+    //from the main page and attaches event listeners to all its children
     homepageDetails.forEach((artItem)=> {
         homepageGallery.appendChild(artItem);
         // console.log(detail)
-        
-        artItem.addEventListener('click',()=>{
-            // console.log(artItem)=
-        });
-
-    });
-
-    
-
+        /* artItem.addEventListener('click',()=>{
+            console.log(homepageArtRedirect.url)}); */
+        artItem.addEventListener('click',homepageArtRedirect);
+    }); 
 })

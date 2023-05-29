@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                 document.getElementById('artist-image').innerHTML = '';
                 document.getElementById('art-year').textContent = '';
                 document.getElementById('art-desc').textContent = '';
+                document.getElementById('image-link').href = '';
 
 
                 const currentArt = galleriaData[currentIndex];
@@ -95,6 +96,67 @@ document.addEventListener('DOMContentLoaded',()=>{
                 const progressPercentage = (currentIndex + 1) * 6.67;
                 progressBar.style.width = progressPercentage;
         });
+        
+        
+        //A function to receive the url params sent from by event listeners
+        //homepage , that inteprets HomepageArtRedirect() from artItem
+        const homepageRedirectReceiver =( paramName,url)=>{
+                if (!url) url = window.location.href;
+                paramName = paramName.replace(/[[\]]/g, "\\$&");
+                const regex = new RegExp("[?&]" + paramName + "(=([^&#]*)|&|#|$)");
+                let results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+        
+        
+        //receiving parameters from homepageRedirectReciever function
+        const galleriaIndex = homepageRedirectReceiver('galleriaIndex')
+        const receivedImage = homepageRedirectReceiver('redirectImage');
+        const receivedImageTitle = homepageRedirectReceiver('redirectImageTitle');
+        const receivedArtistName = homepageRedirectReceiver('redirectArtistName');
+        const receivedArtistImage = homepageRedirectReceiver('redirectArtistImage');
+        const receivedArtYear = homepageRedirectReceiver('redirectArtYear');
+        const receivedArtDesc = homepageRedirectReceiver('redirectArtDesc');
+        const receivedImageLink = homepageRedirectReceiver('redirectImageLink');
 
-        galleriaDataDisplay();
+              // function redirectUpdater(){
+                console.log(receivedImage)
+                console.log(receivedImageTitle)
+                console.log(receivedArtistName)
+                console.log(receivedArtistImage)
+                console.log(receivedArtYear)
+                console.log(receivedArtDesc)
+                console.log(receivedImageLink)
+                //reassigning passed values from HomepageRedirectReceiver()
+                const slideshowImageContainer = document.getElementById('slidepage-image');
+                const imgElement = document.createElement('img');
+                imgElement.src = receivedImage;
+                imgElement.classList.add('-mt-10');
+                slideshowImageContainer.appendChild(imgElement);
+                
+                const imageTitleH3 = document.createElement('h3');
+                imageTitleH3.textContent = receivedImageTitle;
+                imageTitleH3.classList.add('text-[1.5rem]','font-bold','leading-[1.8125rem]','font-libre','text-black');
+                
+                const artistName = document.createElement('p');
+                artistName.textContent = receivedArtistName;
+                artistName.classList.add('text-[0.9375rem]','leading-[1.1625rem]','font-libre');        
+                document.getElementById('image-details').appendChild(imageTitleH3)
+                document.getElementById('image-details').appendChild(artistName)
+                
+                const artistImage = document.createElement('img');
+                artistImage.src = receivedArtistImage;
+                // console.log(artistImage);
+                document.getElementById('artist-image').appendChild(artistImage); 
+                document.getElementById('art-year').textContent = receivedArtYear;
+                document.getElementById('art-desc').textContent = receivedArtDesc;
+                document.getElementById('image-link').href = receivedImageLink;
+                // }
+                // redirectUpdater();
+                
+                
+                
+                galleriaDataDisplay();
 });

@@ -21,5 +21,4 @@ document.querySelector('#main-content').innerHTML =`
             <a id="image-link"  class="link2  w-[6.375rem] h-[0.6875rem]  mobile:self-start" href='' target='_blank'></a>     
         </div>
     </div>
-
 `;
