@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function (){
      //A function to pass images from data.json
     //into homepage's main content.
     const homepageGallery = document.getElementById('homepage-gallery');
-    const homepageDetails = galleriaData.map( item => {
+    const homepageDetails = galleriaData.map( (item,index) => {
         let thumbnail = item.images['thumbnail'];
         let imageTitle = item.name;
         let artistName = item.artist['name']
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', function (){
 
         img.src= thumbnail;
 
+        
+        imgContainer.classList.add('homepageArtItem');
+        imgContainer.setAttribute('data-index',index);
+
         imgContainer.appendChild(img);
         imgContainer.appendChild(imgTitleH2);
         imgContainer.appendChild(artistNameP);
@@ -34,7 +38,11 @@ document.addEventListener('DOMContentLoaded', function (){
 
     //append the imgContainer to the already created div container
     //from the main page
-    homepageDetails.forEach(function(detail) {
+    homepageDetails.forEach((detail)=> {
         homepageGallery.appendChild(detail);
+        console.log(detail)
     });
+
+    
+
 })
