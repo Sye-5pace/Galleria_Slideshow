@@ -1,6 +1,6 @@
-import galleriaData from "../public/data.json";
+import galleriaData from "../data.json";
 
-document.addEventListener('DOMContentLoaded', ()=>{
+document.addEventListener('DOMContentLoaded', function (){
      //A function to pass images from data.json
     //into homepage's main content.
     const homepageGallery = document.getElementById('homepage-gallery');
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
         const artistNameP = document.createElement('p');
         artistNameP.textContent = artistName;
-        artistNameP.classList.add('ml-8','font-libre','text-white','text-opacity-75','bg-gradient-to-b','from-transparent','to black');
+        artistNameP.classList.add('ml-8','font-libre','text-white','text-opacity-75','bg-gradient-to-b','from-transparent','to-black');
 
-        img.setAttribute('src',thumbnail);
+        img.src= thumbnail;
 
         imgContainer.appendChild(img);
         imgContainer.appendChild(imgTitleH2);
@@ -34,5 +34,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     //append the imgContainer to the already created div container
     //from the main page
-    homepageGallery.appendChild(homepageDetails);
+    homepageDetails.forEach(function(detail) {
+        homepageGallery.appendChild(detail);
+    });
 })
