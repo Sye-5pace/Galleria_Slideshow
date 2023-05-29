@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function (){
         img.src= thumbnail;
 
         
-        imgContainer.classList.add('homepageArtItem');
+        imgContainer.classList.add('homepage-art-item');
         imgContainer.setAttribute('data-index',index);
 
         imgContainer.appendChild(img);
@@ -37,10 +37,34 @@ document.addEventListener('DOMContentLoaded', function (){
     })
 
     //append the imgContainer to the already created div container
-    //from the main page
-    homepageDetails.forEach((detail)=> {
-        homepageGallery.appendChild(detail);
-        console.log(detail)
+    //from the main page and attaches event listeners to all its children
+    
+    //Function to redirect homepage to corresponding content
+    //on slideshow page
+    const homepageArtRedirect = ()=>{
+        const index = this.dataset.index;
+        const galleriaIndex = galleriaData[index];
+        const url = "slideshowpage.html?" + 
+            "index=" + galleriaIndex +
+            "&redirectImage" + encodeURIComponent(galleriaIndex.images['hero'].small) +
+            // "&redirectModalcontent" + encodeURIComponent(galleriaIndex.artist['name']) +
+            "&redirectImageTitle" + encodeURIComponent(galleriaIndex.name) +
+            "&redirectArtistName" + encodeURIComponent(galleriaIndex.artist['image']) +
+            "&redirectArtistImage" + encodeURIComponent(galleriaIndex.artist['name']) +
+            "&redirectArtYear" + encodeURIComponent(galleriaIndex.year) +
+            "&redirectArtDesc" + encodeURIComponent(galleriaIndex.description) +
+            "&redirectImageLink" + encodeURIComponent(galleriaIndex.source); 
+        window.location.href = url;
+    }
+
+    homepageDetails.forEach((artItem)=> {
+        homepageGallery.appendChild(artItem);
+        // console.log(detail)
+        
+        artItem.addEventListener('click',()=>{
+            // console.log(artItem)=
+        });
+
     });
 
     
