@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function (){
         const index = event.currentTarget.dataset.index;
         const galleriaIndex = galleriaData[index];
         const url = "slideshowpage.html?" + 
-            "index=" + galleriaIndex +
+            "&galleriaIndex=" + encodeURIComponent(index) +
             "&redirectImage=" + encodeURIComponent(galleriaIndex.images['hero'].small) +
             // "&redirectModalcontent" + encodeURIComponent(galleriaIndex.artist['name']) +
             "&redirectImageTitle=" + encodeURIComponent(galleriaIndex.name) +
