@@ -3,7 +3,7 @@ import galleriaData from "../data.json";
 document.addEventListener('DOMContentLoaded', function (){
      //A function to pass images from data.json
     //into homepage's main content.
-    const homepageGallery = document.getElementById('homepage-gallery');
+    // const homepageGallery = document.getElementById('homepage-gallery');
     const homepageDetails = galleriaData.map( (item,index) => {
         let thumbnail = item.images['thumbnail'];
         let imageTitle = item.name;
@@ -32,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function (){
         imgContainer.appendChild(img);
         imgContainer.appendChild(imgTitleH2);
         imgContainer.appendChild(artistNameP);
+        // imgContainer.style.marginLeft = '2rem';
+        // imgContainer.style.marginRight = '2rem';
+
 
         return imgContainer;
     })
@@ -47,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function (){
             "&redirectImage=" + encodeURIComponent(galleriaIndex.images['hero'].small) +
             // "&redirectModalcontent" + encodeURIComponent(galleriaIndex.artist['name']) +
             "&redirectImageTitle=" + encodeURIComponent(galleriaIndex.name) +
-            "&redirectArtistName=" + encodeURIComponent(galleriaIndex.artist['image']) +
-            "&redirectArtistImage=" + encodeURIComponent(galleriaIndex.artist['name']) +
+            "&redirectArtistName=" + encodeURIComponent(galleriaIndex.artist['name']) +
+            "&redirectArtistImage=" + encodeURIComponent(galleriaIndex.artist['image']) +
             "&redirectArtYear=" + encodeURIComponent(galleriaIndex.year) +
             "&redirectArtDesc=" + encodeURIComponent(galleriaIndex.description) +
             "&redirectImageLink=" + encodeURIComponent(galleriaIndex.source); 
@@ -56,13 +59,10 @@ document.addEventListener('DOMContentLoaded', function (){
     }
 
     
-    //append the imgContainer to the already created div container
-    //from the main page and attaches event listeners to all its children
-    homepageDetails.forEach((artItem)=> {
-        homepageGallery.appendChild(artItem);
-        // console.log(detail)
-        /* artItem.addEventListener('click',()=>{
-            console.log(homepageArtRedirect.url)}); */
-        artItem.addEventListener('click',homepageArtRedirect);
-    }); 
+    const artItems = document.querySelectorAll('.art-item')
+    artItems.forEach((artItem, index) => {
+      const itemDetails = homepageDetails[index];
+      artItem.appendChild(itemDetails);
+    });
 })
+
