@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function (){
         // and inserting the title and artist text.
         const imgTitleH2 = document.createElement('h2');
         imgTitleH2.textContent =  imageTitle;
-        imgTitleH2.classList.add('mt-[-6rem]','ml-8','text-white','font-libre','font-bold','w-[12rem]','bg-gradient-to-b' ,'from-transparent','to-black');
+        imgTitleH2.classList.add('mt-[-6rem]','ml-8','text-white','font-libre','font-bold','laptop:w-[11.3rem]','tablet:w-[11.5rem]','mobile:w-[11.5rem]','bg-gradient-to-b' ,'from-transparent','to-black');
 
         const artistNameP = document.createElement('p');
         artistNameP.textContent = artistName;
