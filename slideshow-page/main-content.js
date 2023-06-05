@@ -11,17 +11,17 @@ document.querySelector('#main-content').innerHTML =`
                 <h2 class="font-libre text-white font-bold text-[0.625rem] leading-[0.75rem] tracking-[0.125rem] text-right" >VIEW IMAGE</h2>
             </div>
             <div class="laptop:flex laptop:flex-col  laptop:left-[31%] children:border-2 children:border-dashed children:border-[#4081aa] absolute tablet:left-[37%] tablet:flex tablet:flex-col">
-                <div id="image-details"  class="w-[27.8125rem]  tablet:pl-[4.0625rem] flex flex-col laptop:gap-y-6 tablet:gap-y-4 h-[14.875rem] mobile:h-[6.5rem] mobile:w-[17.5rem] relative mobile:bottom-14 p-4 bg-[#fff] "></div>
+                <div id="image-details"  class="w-[27.8125rem]  tablet:pl-[4.0625rem] flex flex-col laptop:gap-y-2 tablet:gap-y-4 h-[14.875rem] mobile:h-[6.5rem] mobile:w-[17.5rem] relative mobile:bottom-14 p-4 bg-[#fff] "></div>
                 <div id="artist-image"  class="laptop:ml-[6rem] tablet:ml-[16.4rem] laptop:mt-[16rem] w-[8rem] h-[8rem] mobile:h-[4rem] mobile:w-[4rem] relative mobile:bottom-14 mobile:left-3 " ></div>
 
             </div>
         </div>
-        <div class="border-2 border-dashed border-[#2190be] laptop:w-[29.75rem] laptop:h-[36.375rem] laptop:gap-y-[12rem] tablet:w-[32.8125rem] tablet:h-[25.375rem] tablet:gap-y-7 flex flex-col mobile:h-[33rem] mobile:items-end mobile:gap-y-10 mobile:mt-[-1.3rem] ">
+        <div class="border-2 border-dashed border-[#2190be] laptop:w-[29.75rem] laptop:h-[36.375rem] laptop:gap-y-[10rem] tablet:w-[32.8125rem] tablet:h-[25.375rem] tablet:gap-y-7 flex flex-col mobile:h-[33rem] mobile:items-end mobile:gap-y-10 mobile:mt-[-1.3rem] ">
             <div class="flex flex-col ">
                 <h1 id="art-year"  class="laptop: tablet:ml-[-5rem] mobile:w-[14.875rem] mobile:h-[6.25rem] mobile:self-end font-libre  mobile:text-[6.25rem] leading-[6.25rem]"></h1>     
                 <p id="art-desc" class="mobile:relative mobile:bottom-7"></p>
             </div>
-            <a id="image-link"  class="link2 text-boulder font-libre font-bold  w-[6.375rem] h-[0.6875rem] tablet:ml-[4rem] mobile:self-start" href='' target='_blank'></a>     
+            <a id="image-link"  class="link2 underline text-boulder font-libre font-bold  w-[6.375rem] h-[0.6875rem] tablet:ml-[4rem] mobile:self-start" href='' target='_blank'></a>     
         </div>
     </div>
 `;

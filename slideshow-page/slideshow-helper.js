@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                 // Set the text content of the artDesc element
                 const artDesc = document.getElementById('art-desc');
                 artDesc.textContent = artDescdata;
-                artDesc.classList.add('laptop:text-left','laptop:mt-[-2.4rem]','tablet:self-end','tablet:mt-[-2rem]','tablet:w-[28.5625rem]','tablet:h-[17.5625rem]','mobile:text-right','font-libre', 'font-bold', 'leading-[1.75rem]', 'text-[0.875rem]', 'text-boulder');
+                artDesc.classList.add('laptop:w-[21.875rem]','laptop:text-left','laptop:mt-[-2.4rem]','tablet:self-end','tablet:mt-[-2rem]','tablet:w-[28.5625rem]','tablet:h-[17.5625rem]','mobile:text-right','font-libre', 'font-bold', 'leading-[1.75rem]', 'text-[0.875rem]', 'text-boulder');
 
                 // Set the href attribute and text content of the artSource element
                 const artSource = document.getElementById('image-link');
