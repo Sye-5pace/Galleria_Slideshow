@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function (){
 
         
         imgContainer.classList.add('homepage-art-item');
-        imgContainer.setAttribute('data-index',index);
+        // imgContainer.setAttribute('data-index',index);
 
         imgContainer.appendChild(img);
         imgContainer.appendChild(imgTitleH2);
