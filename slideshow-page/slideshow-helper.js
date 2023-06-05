@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                 //Assign corresponding values from the galleriaData.json
                 let smallImage = currentArt.images['hero'].small;
                 let largeImage = currentArt.images['hero'].large;
+                let previewImage = currentArt.images['gallery'];
                 let imageTitledata = currentArt.name;
                 let artistNamedata = currentArt.artist['name'];
                 let artistImagedata = currentArt.artist['image'];
@@ -88,8 +89,22 @@ document.addEventListener('DOMContentLoaded',()=>{
                 imgLarge.src = largeImage;
                 imgLarge.classList.add('mobile:hidden','tablet:hidden','laptop:w-[29.6875rem]','laptop:h-[35rem]');
                 document.getElementById('slidepage-image').appendChild(imgLarge);
+
+                document.getElementById('preview-image').src = previewImage;
         }
-        
+
+        //Modal control for Slideshow page
+        const modalViewer = document.getElementById('viewImage-btn');
+        const modalCloser = document.getElementById('modal-closer')
+        const viewImagemodal = document.getElementById('viewimage-modal');
+
+        modalViewer.addEventListener('click', () =>{
+                viewImagemodal.style.display = 'block';
+        })
+
+        modalCloser.addEventListener('click', () =>{
+                viewImagemodal.style.display = 'none';
+        })
         
         document.getElementById('back-btn').addEventListener('click',() => {
                 currentIndex = Math.max(currentIndex - 1, 0);

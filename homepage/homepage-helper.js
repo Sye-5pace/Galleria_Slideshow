@@ -59,6 +59,7 @@ document.addEventListener('DOMContentLoaded', function (){
       artItem.appendChild(itemDetails);
       artItem.setAttribute('data-index', index)
       artItem.addEventListener('click', homepageArtRedirect);
+      artItem.style.cursor = 'pointer';
     });
 })
 
