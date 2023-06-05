@@ -1,6 +1,6 @@
 document.querySelector('#footer').innerHTML = `
 
-    <div class=" flex flex-col">
+    <div class=" flex flex-col laptop:mt-10">
         <div class="relative bg-mercury w-full h-[0.0625rem]">
              <div id="progress-bar"  class="bg-black w-[1.5625rem] h-[0.0625rem]"></div> 
         </div>

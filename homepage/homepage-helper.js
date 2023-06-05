@@ -43,22 +43,12 @@ document.addEventListener('DOMContentLoaded', function (){
     //Function to redirect homepage to corresponding content
     //on slideshow page
     const homepageArtRedirect = (event)=>{
-        // console.log("event", event)
+
         const index = event.currentTarget.dataset.index;
-        // console.log("ERROR?",index)
         const galleriaIndex = galleriaData[index];
         
-        console.log("zzzzzzzzzzzz",galleriaIndex);
         const url = "slideshowpage.html?" + 
-            "&galleriaIndex=" + encodeURIComponent(index) +
-            "&redirectImage=" + encodeURIComponent(galleriaIndex.images['hero'].small) +
-            // "&redirectModalcontent" + encodeURIComponent(galleriaIndex.artist['name']) +
-            "&redirectImageTitle=" + encodeURIComponent(galleriaIndex.name) +
-            "&redirectArtistName=" + encodeURIComponent(galleriaIndex.artist['name']) +
-            "&redirectArtistImage=" + encodeURIComponent(galleriaIndex.artist['image']) +
-            "&redirectArtYear=" + encodeURIComponent(galleriaIndex.year) +
-            "&redirectArtDesc=" + encodeURIComponent(galleriaIndex.description) +
-            "&redirectImageLink=" + encodeURIComponent(galleriaIndex.source); 
+            "&galleriaIndex=" + encodeURIComponent(index) ; 
         window.location.href = url;
     }
 

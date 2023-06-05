@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 
                 //Assign corresponding values from the galleriaData.json
                 let smallImage = currentArt.images['hero'].small;
+                let largeImage = currentArt.images['hero'].large;
                 let imageTitledata = currentArt.name;
                 let artistNamedata = currentArt.artist['name'];
                 let artistImagedata = currentArt.artist['image'];
@@ -28,11 +29,12 @@ document.addEventListener('DOMContentLoaded',()=>{
                 // Creating corresponding/Missing Dom elements and assigning respective values
                 const imageTitleH3 = document.createElement('h3');
                 imageTitleH3.textContent = imageTitledata;
-                imageTitleH3.classList.add('tablet:text-[3.5rem]','tablet:leading-[3rem]','mobile:text-[1.5rem]','font-bold','mobile:leading-[1.8125rem]','font-libre','text-black');
+                imageTitleH3.classList.add('laptop:leading-[4rem]','laptop:text-left' ,'text-[3.5rem]','tablet:leading-[3rem]','mobile:text-[1.5rem]','font-bold','mobile:leading-[1.8125rem]','font-libre','text-black');
 
                 const artistName = document.createElement('p');
                 artistName.textContent = artistNamedata;
-                artistName.classList.add('text-[0.9375rem]','leading-[1.1625rem]','font-libre');        
+                artistName.classList.add('text-boulder','text-[0.9375rem]','leading-[1.1625rem]','font-libre');       
+
 
                 // Create and set the source attribute of the img element
                 const artistImage = document.createElement('img');
@@ -42,12 +44,12 @@ document.addEventListener('DOMContentLoaded',()=>{
                 // Create and set the text content of the h1 element
                 const artYear = document.createElement('h1');
                 artYear.textContent = artYeardata;
-                artYear.classList.add('tablet:ml-[4rem]','tablet:text-[12.5rem]','mobile:text-[6.25rem]', 'text-concrete', 'font-bold', 'font-libre', 'text-left');
+                artYear.classList.add('laptop:text-[12.5rem]','laptop:leading-[9.375rem]','tablet:ml-[4rem]','tablet:text-[12.5rem]','mobile:text-[6.25rem]', 'text-concrete', 'font-bold', 'font-libre', 'text-left');
 
                 // Set the text content of the artDesc element
                 const artDesc = document.getElementById('art-desc');
                 artDesc.textContent = artDescdata;
-                artDesc.classList.add('tablet:self-end','tablet:mt-[-2rem]','tablet:w-[28.5625rem]','tablet:h-[17.5625rem]','mobile:text-right','font-libre', 'font-bold', 'leading-[1.75rem]', 'text-[0.875rem]', 'text-boulder');
+                artDesc.classList.add('laptop:text-left','laptop:mt-[-2.4rem]','tablet:self-end','tablet:mt-[-2rem]','tablet:w-[28.5625rem]','tablet:h-[17.5625rem]','mobile:text-right','font-libre', 'font-bold', 'leading-[1.75rem]', 'text-[0.875rem]', 'text-boulder');
 
                 // Set the href attribute and text content of the artSource element
                 const artSource = document.getElementById('image-link');
@@ -79,8 +81,13 @@ document.addEventListener('DOMContentLoaded',()=>{
                 //html element
                 const img = document.createElement('img');
                 img.src = smallImage;
-                img.classList.add('mobile:-mt-10','tablet:h-[35rem]','tablet:w-[29.6875rem]');
+                img.classList.add('mobile:-mt-10','tablet:h-[35rem]','tablet:w-[29.6875rem]','laptop:w-[29.6875rem]','laptop:h-[35rem]', 'laptop:hidden');
                 document.getElementById('slidepage-image').appendChild(img);
+
+                const imgLarge = document.createElement('img');
+                imgLarge.src = largeImage;
+                imgLarge.classList.add('mobile:hidden','tablet:hidden','laptop:w-[29.6875rem]','laptop:h-[35rem]');
+                document.getElementById('slidepage-image').appendChild(imgLarge);
         }
         
         
