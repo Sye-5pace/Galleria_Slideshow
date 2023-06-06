@@ -12,9 +12,9 @@ export default {
       'libre':['Libre Baskerville', 'serif']
     },
     screens: {
-      'mobile':{'min':'12.5em', 'max':'26.75em'},
-      'tablet':{'min':'26.75em', 'max':'48em'},
-      'laptop':{'min':'48.125em'}
+      'mobile': {'min':'200px','max':'427px'},
+      'tablet': {'min':'427px','max':'782px'},
+      'laptop': {'min':'782.1px'}
     },
     colors:{
       //primary colors
