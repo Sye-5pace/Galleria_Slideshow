@@ -1,4 +1,4 @@
-import galleriaData from "../data.json";
+import galleriaData from "./data.json";
 
 document.addEventListener('DOMContentLoaded', function (){
      //A function to pass images from data.json
@@ -27,14 +27,10 @@ document.addEventListener('DOMContentLoaded', function (){
 
         
         imgContainer.classList.add('homepage-art-item');
-        // imgContainer.setAttribute('data-index',index);
 
         imgContainer.appendChild(img);
         imgContainer.appendChild(imgTitleH2);
         imgContainer.appendChild(artistNameP);
-        // imgContainer.style.marginLeft = '2rem';
-        // imgContainer.style.marginRight = '2rem';
-
 
         return imgContainer;
     })

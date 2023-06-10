@@ -2,8 +2,7 @@
 const plugin = require('tailwindcss/plugin');
 export default {
   content: [
-    './homepage/*.js',
-    './slideshow-page/*.js',
+    'slideshow/*.js',
     '*.html',
     '*.js'
   ],

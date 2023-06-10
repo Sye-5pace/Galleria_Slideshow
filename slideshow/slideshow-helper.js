@@ -1,6 +1,10 @@
+// import galleriaData from "./data.json";
+
+// const galleriaData = require('./data.json');
 import galleriaData from '../data.json';
 
-document.addEventListener('DOMContentLoaded',()=>{
+
+document.addEventListener('DOMContentLoaded',() => {
         let currentIndex = 0;
         const progressBar = document.getElementById('progress-bar');
 
@@ -138,7 +142,7 @@ document.addEventListener('DOMContentLoaded',()=>{
                 const galleriaIndex = homepageRedirectReceiver('galleriaIndex');
                 currentIndex = parseInt(galleriaIndex, 10) || 0;
                 // Recalculate the width of the progress bar based on the index
-                console.log(galleriaIndex)
+                // console.log(galleriaIndex)
                 const progressBarPercentage = (parseInt(galleriaIndex, 10) + 1) * 6.67;
                 const progressBar = document.getElementById('progress-bar');
                 progressBar.style.width = `${progressBarPercentage}%`;
@@ -152,14 +156,3 @@ document.addEventListener('DOMContentLoaded',()=>{
 });
 
 
-
-//               // function redirectUpdater(){
-//                 
-              
-                
-       
-                
-                
-//                 // }
-//                 // redirectUpdater();
-                

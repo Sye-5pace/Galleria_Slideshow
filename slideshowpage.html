@@ -7,14 +7,74 @@
     <title>Galleria Slideshow</title>
   </head>
   <body class="w-full min-h-screen p-0 m-0 border-box laptop:grid laptop:grid-rows-[5rem_39rem_4rem] tablet:grid tablet:grid-rows-[5.5625rem_68.4375rem_6rem] mobile:grid mobile:grid-rows-[5rem_61.625rem_4.5rem] ">
-    <div class="fixed inset-0 z-[999] hidden  bg-black bg-opacity-80  mx-auto w-full h-full" id="viewimage-modal"></div>
-    <div id="header"></div>
-    <div class="mobile:mx-auto" id="main-content"></div>
-    <div id="footer"></div>
-    <script type="module" src="./slideshow-page/slideshow-helper.js"></script>
-    <script type="module" src="./slideshow-page/header.js"></script>
-    <script type="module" src="./slideshow-page/viewImage-modal.js"></script>
-    <script type="module" src="./slideshow-page/main-content.js"></script>
-    <script type="module" src="./slideshow-page/footer.js"></script>
+    <div class="fixed inset-0 z-[999] hidden  bg-black bg-opacity-80  mx-auto w-full h-full " id="viewimage-modal" >
+      <div class="flex flex-row items-center justify-center text-white ">
+        <div class="flex flex-col  laptop:my-3  laptop:gap-y-8 tablet:my-16  tablet:gap-y-8  mobile:my-[12rem] mobile:gap-y-7 ">
+            <h3 id="modal-closer" class=" hover:text-opacity-[0.25] cursor-pointer font-libre text-[0.875rem] font-bold tracking-[0.1875rem] self-end text-white">close</h3>
+            <img id="preview-image" src="" alt="image preview"  class=" tablet:w-[41.8575rem] tablet:h-[32.5rem] mobile:w-[20.4375rem] mobile:h-[16.4375rem]"/>
+        </div>
+      </div>
+    </div>
+    <header >
+      <div class="flex flex-col laptop:mx-10 laptop:gap-y-5 gap-y-6">
+        <div class="flex flex-row items-center justify-between laptop:mt-2 tablet:mx-10 mobile:mx-6 tablet:mt-6 mobile:mt-6">
+            <img class="mobile:w-[7.065rem] mobile:h-[2rem]" src='../assets/shared/logo.svg'/>
+            <a class="link1 text-boulder" href="./index.html">STOP SLIDESHOW</a>
+        </div>
+        <div class="w-full h-[0.0625rem] bg-mercury"></div>
+      </div>
+    </header>
+    <main class="mobile:mx-auto"  id="main-content">
+      <div class="laptop:flex laptop:flex-row laptop:gap-6 laptop:mx-10 laptop:mt-2  tablet:mt-10 tablet:mx-10 tablet:flex tablet:flex-col tablet:gap-y-16 mobile:flex mobile:flex-col  mobile:h-[55.9375rem] mobile:mt-8 mobile:mx-6">
+        <div class="laptop:flex laptop:flex-row laptop:w-[53.4375rem] laptop:h-[39rem] tablet:flex tablet:flex-row tablet:h-[35rem] tablet:w-[43rem] mobile:h-[24.875rem]">
+            <div id="slidepage-image"  class="mobile:h-[17.5rem] mobile:mt-10 ">
+            </div>
+            <div id="viewImage-btn" class="relative p-4 justify-between cursor-pointer opacity-[0.75] laptop:right-[53%] laptop:top-[81%] tablet:right-[65%] tablet:top-[90%] laptop w-[9.5rem] flex flex-row items-center   h-10 z-[500] bg-black mobile:bottom-[17rem]  mobile:left-4">
+                <svg class="w-[0.75rem] h-[0.75rem]" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#FFF" fill-rule="nonzero"><path d="M7.714 0l1.5 1.5-2.357 2.357 1.286 1.286L10.5 2.786l1.5 1.5V0zM3.857 6.857L1.5 9.214 0 7.714V12h4.286l-1.5-1.5 2.357-2.357zM8.143 6.857L6.857 8.143 9.214 10.5l-1.5 1.5H12V7.714l-1.5 1.5zM4.286 0H0v4.286l1.5-1.5 2.357 2.357 1.286-1.286L2.786 1.5z"/></g>
+                </svg>
+                <h2 class="font-libre text-white font-bold text-[0.625rem] leading-[0.75rem] tracking-[0.125rem] text-right" >VIEW IMAGE</h2>
+            </div>
+            <div class="laptop:flex laptop:flex-col  laptop:left-[31%]  absolute tablet:left-[37%] tablet:flex tablet:flex-col">
+                <div id="image-details"  class="w-[27.8125rem]  tablet:pl-[4.0625rem] flex flex-col laptop:gap-y-2 tablet:gap-y-4 h-[14.875rem] mobile:h-[6.5rem] mobile:w-[17.5rem] relative mobile:bottom-14 p-4 bg-[#fff] "></div>
+                <div id="artist-image"  class="laptop:left-[17%] tablet:ml-[16.4rem] laptop:top-[15rem] w-[8rem] h-[8rem] mobile:h-[4rem] mobile:w-[4rem] relative mobile:bottom-14 mobile:left-3 " ></div>
+            </div>
+        </div>
+        <div class="laptop:w-[29.75rem] laptop:h-[36.375rem] laptop:gap-y-[10rem] tablet:w-[32.8125rem] tablet:h-[25.375rem] tablet:gap-y-7 flex flex-col mobile:h-[33rem] mobile:items-end mobile:gap-y-10 mobile:mt-[-1.3rem] ">
+            <div class="flex flex-col ">
+                <h1 id="art-year"  class="laptop: tablet:ml-[-5rem] mobile:w-[14.875rem] mobile:h-[6.25rem] mobile:self-end font-libre  mobile:text-[6.25rem] leading-[6.25rem]"></h1>     
+                <p id="art-desc" class="mobile:relative mobile:bottom-7"></p>
+            </div>
+            <a id="image-link"  class="link2 underline text-boulder font-libre font-bold  w-[6.375rem] h-[0.6875rem] tablet:ml-[4rem] mobile:self-start" href='' target='_blank'></a>     
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+        <div class="flex flex-col laptop:mt-3">
+          <div class="relative bg-mercury w-full h-[0.0625rem]">
+              <div id="progress-bar"  class="bg-black w-[1.5625rem] h-[0.0625rem]"></div> 
+          </div>
+          <div class="flex flex-row laptop:mx-10  justify-between  tablet:gap-[16rem] laptop:my-2 tablet:my-6  mobile:my-4  mobile:mx-6 tablet:mx-10  items-center tablet:w-[43.1056rem] tablet:h-[2.9375rem] mobile:h-[2.4375rem]" >
+              <div class="laptop:w-[22.4375rem] tablet:w-[22.4375rem] tablet:gap-y-[0.7rem] mobile:h-[2.375rem]  flex flex-col gap-y-[0.5rem]">
+                  <h3 id="footer-h3" class="laptop:text-[1.125rem] laptop:leading-[1.375rem] tablet:text-[1.125rem] tablet:leading-[1.375rem] font-libre font-bold mobile:text-[0.875rem] mobile:leading-[1.085rem] text-black"></h3>
+                  <p id="footer-p" class="font-libre  laptop:text-opacity-[0.75] tablet:text-[0.8125rem] leading-[1rem] tablet:text-opacity-[0.75] mobile:text-[0.625rem] mobile:leading-[0.775rem]"></p>
+              </div>
+              <div class=" mobile:w-[5rem]  mobile:my-2 flex flex-row gap-8">
+                  <div id="back-btn" class="fill-none mobile:w-[1.04875rem] cursor-pointer">
+                      <svg width="26" height="24" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" fill="none" fill-rule="evenodd"><path d="M24.166 1.843L3.627 12.113l20.539 10.269V1.843z" stroke-width="2"/>
+                          <path fill="#D8D8D8" d="M.986.5h-1v22.775h1z"/></g>
+                      </svg>
+                  </div>
+                  <div id="forward-btn" class="cursor-pointer" >
+                      <svg class="stroke"  width="26" height="24" xmlns="http://www.w3.org/2000/svg"><g stroke="#000" fill="none" fill-rule="evenodd">
+                          <path d="M1.528 1.843l20.538 10.27L1.528 22.382V1.843z" stroke-width="2"/><path fill="#D8D8D8" d="M24.708.5h1v22.775h-1z"/></g>
+                      </svg>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </footer>
+    <script type="module" src="./slideshow/slideshow-helper.js"></script>
+    <!-- <script type="module" src="./slideshow//viewImage-modal.js"></script> -->
   </body>
 </html>
